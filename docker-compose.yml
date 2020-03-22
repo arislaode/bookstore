@@ -1,0 +1,21 @@
+version: '3.6'
+
+services: 
+    web:
+        build: .
+        command: python /bookstore_project/manage.py runserver 0.0.0.0:8000
+        volumes: 
+            - .:/bookstore_project
+        ports: 
+            - 8000:8000
+        depends_on: 
+            - db
+    db:
+        image: postgres
+        restart: always
+        environment:
+          POSTGRES_PASSWORD: postgres
+        volumes: 
+            - postgres_data:/var/lib/postgresql/data/
+volumes: 
+    postgres_data:
