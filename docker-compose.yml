@@ -4,6 +4,9 @@ services:
     web:
         build: .
         command: python /bookstore_project/manage.py runserver 0.0.0.0:8000
+        environment: 
+            - SECRET_KEY=l_o7oi1rg5)t^lxm9-43%0)s-=1qpeq%o7gfq+e5#*!t+_ev80
+            - DEBUG=1
         volumes: 
             - .:/bookstore_project
         ports: 
