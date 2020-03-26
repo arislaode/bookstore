@@ -38,11 +38,16 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+
+    # Third-Party
     'crispy_forms',
     'allauth',
     'allauth.account',
+
+    #Local
     'users',
     'pages',
+    'books',
 ]
 
 MIDDLEWARE = [
@@ -169,3 +174,5 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
 
 DEFAULT_FROM_EMAIL = 'admin@djangobookstore.com'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
