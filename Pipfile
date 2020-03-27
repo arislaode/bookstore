@@ -10,6 +10,7 @@ django = "*"
 psycopg2-binary = "*"
 django-crispy-forms = "*"
 django-allauth = "*"
+pillow = "*"
 
 [requires]
 python_version = "3.6"
