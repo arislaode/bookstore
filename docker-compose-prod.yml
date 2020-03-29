@@ -3,7 +3,7 @@ version: '3.6'
 services: 
     web:
         build: .
-        command: python /bookstore_project/manage.py runserver 0.0.0.0:8000
+        command: gunicorn bookstore_project.wsgi -b 0.0.0.0:8000
         environment: 
             - ENVIRONMENT=production
             - SECRET_KEY=<secret key for django>

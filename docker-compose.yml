@@ -3,13 +3,13 @@ version: '3.6'
 services: 
     web:
         build: .
-        command: python /bookstore_project/manage.py runserver 0.0.0.0:8000
+        command: gunicorn bookstore_project.wsgi -b 0.0.0.0:8000
         environment: 
             - ENVIRONMENT=development
-            - SECRET_KEY=l_o7oi1rg5)t^lxm9-43%0)s-=1qpeq%o7gfq+e5#*!t+_ev80
+            - SECRET_KEY=<secret key for django>
             - DEBUG=1
-            - STRIPE_TEST_PUBLISHABLE_KEY=pk_test_1fgMGsuhR7hnAK6fRb3WQ8GP00wFjGNzHc
-            - STRIPE_TEST_SECRET_KEY=sk_test_4x46RvT5fqRJcvrxMclp3pQz00JdLQNWKx
+            - STRIPE_TEST_PUBLISHABLE_KEY=<publish key stripe>
+            - STRIPE_TEST_SECRET_KEY=<secret key stripe>
         volumes: 
             - .:/bookstore_project
         ports: 
